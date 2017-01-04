@@ -25,10 +25,13 @@ def get_hdma(year, limit, offset):
     text_file.write(hdma_csv)
     text_file.close()
 
-years = [2011, 2012, 2013, 2014, 2015]
+##### Define parameters for API pull
+years = [2010, 2011, 2012, 2013, 2014, 2015]
+size = 60000
+sample_offset = 200
 
 for i in years:
-    get_hdma(i, 50000, 200)
+    get_hdma(i, size, sample_offset)
 
 print("--- API Pull Finished: %s minutes  ---" % str((time.time() - start_time)/60))
 
